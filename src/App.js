@@ -9,15 +9,19 @@ function App() {
 
 //UserDefinedTag
 function CounterApp() {
+  //Data member
+  let Counter=1;
+
   //Member function
   let LikeMeAction = () => {
-    // alert();
-    console.log("i am button click");
+    Counter = Counter + 1;
+    console.log("i am button click", Counter);
   };
   
   //JSX :: view :: user-interface :: required
   return (
     <>
+    <h1>{Counter}</h1>
       <input type="button" value="Like Me!" onClick={LikeMeAction}/>
     </>
   );
