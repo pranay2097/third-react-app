@@ -3,40 +3,33 @@ import { useState } from "react";
 function App() {
   return (
     <>
-      <h1>Counter App</h1>
-      <CounterApp/>
-      <CounterApp/>
-      <CounterApp/>
-      <CounterApp/>
+      <h1>String example</h1>
+      <StringDemo />
     </>
   );
 }
 
-function CounterApp() {
-  // let counter= 1; //stateless member
-  // let list = useState(1);
-  // let [counter, setCounter] = list;
-  let[counter, setCounter] = useState(100);  //stateful
+function StringDemo() {
+  let [title, setTitle] = useState ("Hello World");
 
-  let LikeMeAction = () => {
-    counter = counter + 1;
-    console.log(counter);
+  let LowerCaseAction = () => {
+    title = title.toLowerCase();
+    console.log(title);
 
-    //asking react to perform dom operation
-    setCounter(counter);
+    setTitle(title);
   };
+  let UpperCaseAction = () => {
+    title = title.toUpperCase();
+    console.log(title);
 
+    setTitle(title);
+  };
   return (
     <>
-      <h5>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores architecto quos doloremque quisquam? Soluta tempora sit provident nobis maiores ab.
-      </h5>
-      <h1>
-        {counter}{" "}
-        <input type="button" value="&#128077;" onClick={LikeMeAction} />
-      </h1>
-      
+      <h1>{title}</h1>
+      <input type="button" value="Lower Case" onClick={LowerCaseAction} />
+      <input type="button" value="Upper Case" onClick={UpperCaseAction}/>
     </>
   );
 }
-
 export default App;
