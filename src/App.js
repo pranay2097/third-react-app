@@ -9,26 +9,24 @@ function App() {
   );
 }
 
-//UserDefinedTag
 function CounterApp() {
-  //!.Data member :: stateless/stateful
-  // let Counter=1; //stateless
-  let [Counter, setCounter] = useState(1); //to create stateful variable + this will help to perform DOM operation
+  // let counter= 1; //stateless member
+  // let list = useState(1);
+  // let [counter, setCounter] = list;
+  let[counter, setCounter] = useState(100);  //stateful
 
-  //2.Member function
   let LikeMeAction = () => {
-    Counter = Counter + 1;
-    console.log("i am button click", Counter);
+    counter = counter + 1;
+    console.log(counter);
 
-    //Asking React to perform DOM operation
-    setCounter(Counter);
+    //asking react to perform dom operation
+    setCounter(counter);
   };
-  
-  //3.JSX :: view :: user-interface :: required
+
   return (
     <>
-    <h1>{Counter}</h1>
-      <input type="button" value="Like Me!" onClick={LikeMeAction}/>
+      <h1>{counter}</h1>
+      <input type="button" value="Like Me" onClick={LikeMeAction} />
     </>
   );
 }
