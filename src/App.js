@@ -11,11 +11,11 @@ function App() {
 
 //UserDefinedTag
 function CounterApp() {
-  //Data member :: stateless/stateful
+  //!.Data member :: stateless/stateful
   // let Counter=1; //stateless
   let [Counter, setCounter] = useState(1); //to create stateful variable + this will help to perform DOM operation
 
-  //Member function
+  //2.Member function
   let LikeMeAction = () => {
     Counter = Counter + 1;
     console.log("i am button click", Counter);
@@ -24,7 +24,7 @@ function CounterApp() {
     setCounter(Counter);
   };
   
-  //JSX :: view :: user-interface :: required
+  //3.JSX :: view :: user-interface :: required
   return (
     <>
     <h1>{Counter}</h1>
